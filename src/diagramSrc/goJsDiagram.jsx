@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as go from 'gojs';
-import {configureGridStyle, configureNodeTemplate} from './diagramStyle';
+import {configureGridStyle, configureNodeTemplate} from './diagramStyle.jsx';
 
 const GoJsDiagram = () => {
     const diagramRef = useRef(null);
     const diagram = useRef(null);
-
     useEffect(() => {
         if (diagramRef.current && !diagram.current) {
             const $ = go.GraphObject.make;
@@ -28,9 +27,9 @@ const GoJsDiagram = () => {
         //        diagram.current.div = null;
         //    }
         //};
-    }, []);
 
-        return <div ref={diagramRef} style={{ width: '400px', height: '400px'}}></div>;
+    }, []);
+    return <div ref={diagramRef} className="w-full"></div>;
 };
 
 
