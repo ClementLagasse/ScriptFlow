@@ -1,5 +1,5 @@
-import '../App.css'
-import scriptFlowLogo from '../assets/scriptFlow.svg';
+import '../../App.css'
+import scriptFlowLogo from '../../assets/scriptFlow.svg';
 
 const CustomNavBar = () => {
     return (

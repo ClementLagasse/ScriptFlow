@@ -1,20 +1,27 @@
 
 import './App.css'
-import CustomNavBar from './navBar/navBar.jsx'
-import CustomFooter from "./footer/footer.jsx";
-import DiagramBoxCustom from "./diagramSrc/diagramBox.jsx";
+import CustomNavBar from './landingPage/navBar/navBar.jsx'
+import CustomFooter from "./landingPage/footer/footer.jsx";
 import LandingPageContent from "./landingPage/landingPageContent.jsx";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ChartsPage from "./chartPage/chartsPage.jsx";
 
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <CustomNavBar />
+                        <LandingPageContent />
+                        <CustomFooter />
+                    </>
+                } />
+                <Route path="/charts" element={<ChartsPage />} />
 
-function App() {
-
-  return (
-    <>
-      <CustomNavBar/>
-        <LandingPageContent/>
-      <CustomFooter/>
-    </>
-  )
-}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App
